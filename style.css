@@ -1,0 +1,54 @@
+html{
+  font-size: 14px; /* Used for rem units*/
+}
+header{
+  background-color: grey;
+  text-align: center;
+  background-color: rgba(0, 0, 80, 0.92);
+  color: #DDDDE7;
+}
+
+p{
+  margin-top: 0px;
+  font-size: 0.8rem;
+  padding-bottom: 5%;
+}
+#weather-title{
+  display: inline-block;
+  margin-bottom: 0px;
+}
+
+.img-container{
+position: relative;
+display: inline-block;
+top: 0.5rem;
+height: 2em;
+transform: rotate(20deg);
+overflow: hidden;
+margin-bottom: 0px;
+
+}
+
+#raincloud{
+  position: relative;
+  max-height: 100%;
+  height: auto;
+  display: block;
+}
+
+/*small screens and up only*/
+@media screen and (min-width: 768px){
+  #raincloud{
+  }
+
+}
+
+/*medium screens and up only*/
+@media screen and (min-width: 992px){
+
+}
+
+/*large screens and up only*/
+@media screen and (min-width: 1200px){
+
+}
