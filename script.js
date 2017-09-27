@@ -38,13 +38,14 @@ function googleCall(weatherCall){
 
 // Puts the zip-code of the user on the DOM. Gets called in weatherCall function
   function infoAppend(){
-  $('#zipcode').append('The current zipcode is <span>'+location.zipcode + '</span>');
+  $('#zipcode').append('<p>The current zipcode is <span>'+location.zipcode + '</span></p>');
   $('#state').text(location.state + ".");
   $('#city').text(location.city  + ", ");
-  $('#temp').text(weather.temp);
-  $('#condition').text(weather.condition);
+  $('#temp').append('<p> It is currently ' + weather.temp + '&#8457; </p>');
+  $('#condition').append('<p> The current weather condition is <span id="lowercase">' + weather.condition + '</p>');
   };
 
+var conditions;
 //infoAppend is the callback function so that it cannot run until all data is obtained from API calls
 function weatherCall(state, city, infoAppend){
   $.ajax({
