@@ -31,25 +31,25 @@ function googleCall(weatherCall){
         city: data.results[4].address_components[1].long_name,
         state: data.results[4].address_components[3].short_name
       };
-        weatherCall(location.city, location.state,infoAppend);
+        weatherCall(location.state, location.city,infoAppend);
       }
     });
   };
 
 // Puts the zip-code of the user on the DOM. Gets called in weatherCall function
   function infoAppend(){
-  $('#zipcode').append('<p>' + location.zipcode + '</p>');
-  $('#city').append('<p>' + location.city+ '</p>');
-  $('#state').append('<p>' + location.state + '</p>');
-  $('#temp').append('<p>' + weather.temp + '</p>');
-  $('#condition').append('<p>' + weather.condition + '</p>');
+  $('#zipcode').append('The current zipcode is <span>'+location.zipcode + '</span>');
+  $('#state').text(location.state + ".");
+  $('#city').text(location.city  + ", ");
+  $('#temp').text(weather.temp);
+  $('#condition').text(weather.condition);
   };
 
 //infoAppend is the callback function so that it cannot run until all data is obtained from API calls
-function weatherCall(city, state, infoAppend){
+function weatherCall(state, city, infoAppend){
   $.ajax({
     type: 'GET',
-    url: 'http://api.wunderground.com/api/f32fa4d20086fa0e/features/conditions/q/' + state + '/' + city + '.json',
+    url: 'http://api.wunderground.com/api/f32fa4d20086fa0e/features/conditions/q/' + city + '/' + state + '.json',
     success: function(data){
       weather = {
         temp: data.current_observation.temp_f,

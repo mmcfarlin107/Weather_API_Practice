@@ -5,43 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-<script
+   <link rel="stylesheet" href="style.css">
+  <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
-<script src="./script.js"></script>
-</script>
+    <script src="./script.js"></script>
 </head>
 <body>
 
-<div class="container">
+  <div class="container">
 
-<header>
-  <h1 id="weather-title"> Should I Go Outside? </h1>
-  <div class="img-container">
-  <img id="raincloud" src="./images/thundercloud.png" alt="Thundercloud">
-</div>
-<p> * Must Allow Location For a Weather Report </p> 
-</header>
-<main>
-  <section>
-    <div id="zipcode"></div>
-    <div id="city"></div>
-    <div id="state"></div>
-    <div id="temp"></div>
-    <div id="condition"></div>
-  </section>
-</main>
+  <header>
+    <h1 id="weather-title"> Should I Go Outside? </h1>
+    <div class="img-container">
+    <img id="raincloud" src="./images/thundercloud.png" alt="Thundercloud">
+  </div>
+  <p> * Must Allow Location For a Weather Report </p>
+  </header>
+  <main>
+    <section>
+      <p> You are currently in <span id="city"> Fetching... </span> <span id="state"></span>
+      </p>
 
-</div>
+      <div id="zipcode"></div>
+      <div id="city"></div>
+      <div id="state"></div>
+      <div id="temp"></div>
+      <div id="condition"></div>
+    </section>
+  </main>
 
-
-
-
-
-
-
+  </div>
 
 </body>
 </html>
