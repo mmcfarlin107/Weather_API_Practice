@@ -42,8 +42,8 @@ margin-bottom: 0px;
   display: block;
 }
 
-#lowercase{
-  text-transform: lowercase;
+#capitalize{
+  text-transform: capitalize;
 }
 
 /*small screens and up only*/
