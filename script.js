@@ -25,13 +25,11 @@ function googleCall(weatherCall){
       type: 'POST',
       url:  'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + pos.lat + ','+ pos.lng + '&key=AIzaSyAus5r1JJ5jR0_s9-4IQ5v0dWA7cPWHTCI',
       success: function(data){
-        console.log(data);
         location = {
         zipcode: data.results["0"].address_components[7].short_name,
         city: data.results["0"].address_components[3].long_name,
         state: data.results["0"].address_components[5].short_name
       };
-      console.log(location.city + '   ' + location.state);
         weatherCall(location.state, location.city,infoAppend);
       }
     });
@@ -50,9 +48,9 @@ var conditions;
 function weatherCall(state, city, infoAppend){
   $.ajax({
     type: 'GET',
-    url: 'http://api.wunderground.com/api/f32fa4d20086fa0e/features/conditions/q/' + city + '/' + state + '.json',
+    url: 'http://api.wunderground.com/api/f32fa4d20086fa0e/conditions/q/' + state+ '/' + city + '.json',
     success: function(data){
-      console.log()
+      console.log(data);
       weather = {
         temp: data.current_observation.temp_f,
         condition: data.current_observation.weather,
