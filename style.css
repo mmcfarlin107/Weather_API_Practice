@@ -7,6 +7,10 @@ header{
   background-color: rgba(0, 0, 80, 0.92);
   color: #DDDDE7;
 }
+span{
+  padding: 10px;
+  background-color: orange;
+}
 
 p{
   margin-top: 0px;
